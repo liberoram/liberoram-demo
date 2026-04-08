@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowCart Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand">
+          <span class="brand-mark">G</span>
+          <div>
+            <p class="brand-name">GlowCart</p>
+            <p class="brand-subtitle">Curated lifestyle picks</p>
+          </div>
+        </div>
+        <!-- <button class="cart-pill" id="cartButton" type="button">
+          Cart
+          <span id="cartCount">0</span>
+        </button> -->
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh arrivals</p>
+          <h1>Bring home design-forward essentials that feel premium.</h1>
+          <p class="hero-text">
+            Explore handpicked products and buy instantly with a smooth popup checkout flow.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="primary-link">Shop products</a>
+            <button type="button" class="secondary-link" id="browseDeals">View deals</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p>Today's spotlight</p>
+          <h2>Warm minimal pieces for everyday joy.</h2>
+          <div class="hero-stats">
+            <div>
+              <strong>12+</strong>
+              <span>Featured items</span>
+            </div>
+            <div>
+              <strong>4.8/5</strong>
+              <span>Happy shoppers</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section-heading" id="products">
+        <div>
+          <p class="eyebrow">Product listing</p>
+          <h2>Shop our best sellers</h2>
+        </div>
+        <p class="section-copy">
+          Beautiful essentials with instant product details and direct ordering.
+        </p>
+      </section>
+
+      <section class="product-grid" id="productGrid"></section>
+    </main>
+  </div>
+
+  <!-- <div class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">Your cart</p>
+          <h3>Saved items</h3>
+        </div>
+        <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">₹0</strong>
+        </div>
+        <button class="checkout-button" id="checkoutCart" type="button">Checkout cart</button>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="modal" id="orderModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="icon-button modal-close" id="closeModal" type="button" aria-label="Close popup">×</button>
+      <div class="modal-content">
+        <div class="modal-product">
+          <p class="eyebrow">Order summary</p>
+          <h3 id="modalProductName">Your selected items</h3>
+          <p class="modal-description" id="modalProductDescription"></p>
+          <div class="order-summary-list" id="orderSummaryList"></div>
+          <div class="modal-price-row">
+            <span id="modalProductPrice">₹0</span>
+            <span class="qty-badge" id="modalProductQuantity">Qty 1</span>
+          </div>
+          <button class="submit-button modal-checkout-button hidden" id="detailCheckoutButton" type="button">Checkout</button>
+        </div>
+
+        <form class="contact-form" id="orderForm">
+          <p class="eyebrow">Customer contact details</p>
+          <div class="input-group">
+            <label for="customerName">Full name</label>
+            <input id="customerName" name="customerName" type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-group">
+            <label for="customerPhone">Phone number</label>
+            <input id="customerPhone" name="customerPhone" type="tel" placeholder="Enter your phone number" required>
+          </div>
+          <div class="input-group">
+            <label for="customerAddress">Delivery address</label>
+            <textarea id="customerAddress" name="customerAddress" rows="3" placeholder="Enter your address" required></textarea>
+          </div>
+          <button class="submit-button" type="submit">Proceed to thank you</button>
+        </form>
+
+        <div class="thank-you hidden" id="thankYouBox">
+          <p class="eyebrow">Order placed</p>
+          <h3>Thank you for shopping with us.</h3>
+          <p id="thankYouMessage"></p>
+          <button class="primary-link thank-you-button" id="continueShopping" type="button">Continue shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
